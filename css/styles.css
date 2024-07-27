@@ -65,6 +65,7 @@ ul {
 
 img {
   display: block;
+  width: 100%;
 } /* 0 margin under images */
 
 button {
@@ -94,22 +95,36 @@ button {
 
 .header-prime {
   color: var(--WHITE);
-  font-size: 56px;
+  font-size: 36px;
+  line-height: 1.11;
   font-weight: var(--weight-bold);
-  line-height: 1.07;
   text-align: center;
   letter-spacing: var(--spacing-regular);
   max-width: 496px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
+}
+
+@media only screen and (min-width: 768px) {
+  .header-prime {
+    margin-bottom: 36px;
+    font-size: 56px;
+    line-height: 1.07;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .header-prime {
+    margin-bottom: 48px;
+  }
 }
 
 .header-section {
   color: var(--NAVY-BLUE);
   font-size: 36px;
-  font-weight: var(--weight-bold);
   line-height: 1.11;
+  font-weight: var(--weight-bold);
   text-align: center;
   letter-spacing: var(--spacing-regular);
   margin-bottom: 72px;
@@ -265,6 +280,17 @@ button {
 
 .navigation {
   align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 768px) {
+  .navigation {
+    justify-content: left;
+  }
+  .nav-wrapper {
+    display: flex;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -312,7 +338,7 @@ button {
 
 .hero {
   background-color: var(--NAVY-BLUE);
-  padding: 188px 0;
+  padding: 72px 52px;
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
@@ -325,6 +351,18 @@ button {
   background-size: cover;
   background-clip: padding-box;
   background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero {
+    padding: 112px 0;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .hero {
+    padding: 188px 0;
+  }
 }
 
 @media (min-resolution: 192dpi) {
@@ -464,6 +502,7 @@ button {
   column-gap: 24px;
   row-gap: 72px;
   flex-direction: column;
+  justify-content: center;
 }
 
 @media only screen and (min-width: 768px) {
@@ -474,6 +513,9 @@ button {
 }
 
 .employee-card {
+  width: 264px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: var(--WHITE);
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
@@ -482,7 +524,8 @@ button {
 
 @media only screen and (min-width: 768px) {
   .employee-card {
-    width: calc((100% - 1 * 24px) / 2);
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -540,13 +583,13 @@ button {
 
 @media only screen and (min-width: 768px) {
   .portfolio-card {
-    width: calc((100% - 1 * 48px) / 2);
+    width: calc((100% - 1 * 24px) / 2);
   }
 }
 
 @media only screen and (min-width: 1158px) {
   .portfolio-card {
-    width: calc((100% - 2 * 48px) / 3);
+    width: calc((100% - 2 * 24px) / 3);
   }
 }
 
@@ -602,43 +645,68 @@ button {
 
 .footer {
   background: var(--NAVY-BLUE);
-  padding: 100px 0;
+  padding: 96px 0;
+}
+
+.footer-wrapper {
+  flex-direction: column;
+  column-gap: 24px;
+  row-gap: 72px;
+  align-items: center;
+}
+
+.footer-form-input {
+  color: var(--WHITE);
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: var(--spacing-wide);
+  width: 288px;
+  height: 40px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: transparent;
+  border: 1px solid var(--WHITE);
+  border-radius: 4px;
+  padding-left: 16px;
+  transition: border-color var(--transition-specs);
+}
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  column-gap: 24px;
+  align-items: center;
 }
 
 .footer-logo {
   display: inline-block;
   margin-bottom: 16px;
+  display: block;
+  text-align: center;
+  margin-right: 0;
 }
 
 .footer-text {
   color: var(--CLOUD);
   background-color: var(--NAVY-BLUE);
-  width: 264px;
 }
 
 .media-text {
   font-weight: var(--weight-medium);
   color: var(--WHITE);
   margin-bottom: 16px;
-  display: flex;
+  display: block;
   align-items: center;
+  text-align: center;
 }
 
-.mission {
-  margin-right: 120px;
-}
-
-.social-media {
+/* .social-media {
   margin-right: 80px;
-}
+} */
 
 .social-list-footer {
   justify-content: center;
   gap: 16px;
-}
-
-.baseline {
-  align-items: baseline;
 }
 
 .footer-link {
@@ -648,25 +716,6 @@ button {
 .footer-link:focus,
 .footer-link:hover {
   background-color: var(--GREEN);
-}
-
-.footer-form {
-  display: flex;
-}
-
-.footer-form-input {
-  color: var(--WHITE);
-  font-size: 12px;
-  line-height: 2;
-  letter-spacing: var(--spacing-wide);
-  width: 264px;
-  height: 40px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  background-color: transparent;
-  border: 1px solid var(--WHITE);
-  border-radius: 4px;
-  padding-left: 16px;
-  transition: border-color var(--transition-specs);
 }
 
 .footer-form-input:focus {
@@ -686,6 +735,7 @@ button {
   justify-content: center;
   align-items: center;
   min-width: 165px;
+  height: 40px;
   color: var(--WHITE);
   border-radius: 4px;
   background: var(--IRIS);
@@ -702,6 +752,40 @@ button {
 .submit-btn-icon {
   fill: var(--WHITE);
   margin-left: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    padding: 96px 92px;
+  }
+  .footer-form,
+  .footer-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .footer-form-input,
+  .footer-text {
+    width: 264px;
+  }
+  .media-text,
+  .footer-logo {
+    text-align: left;
+  }
+  .footer-wrapper {
+    align-items: baseline;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .footer {
+    padding: 100px 0;
+  }
+  .mission {
+    margin-right: 96px;
+  }
+  .social-media {
+    margin-right: 56px;
+  }
 }
 
 /* =============== MODAL WINDOW =============== */
